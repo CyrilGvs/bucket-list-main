@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+    <meta charset="UTF-8">
+    <title>{% block title %}Bucket-list{% endblock %}</title>
+    {% block CSS %}
+        <link rel="stylesheet" href="{{ asset('css/baseCSS.css') }}">
+    {% endblock %}
+    <link rel="icon" href="{{ asset('../public/img/mario.png') }}">
+</head>
+
+
+<body>
+<header>
+    <!------NAVBAR------>
+    <nav>
+        <div class="profile">
+            <h1>BUCKET LIST </h1>
+            <h2>"Hello {{ app.user.userIdentifier }}"</h2>
+        </div>
+        <ul>
+            <li><a href="{{ path('home_index') }}">Home</a></li>
+            <li><a href="{{ path('wish_list') }}">Liste</a></li>
+            <li><a href="{{ path('wish_list') }}">Détail</a></li>
+
+            {% if not app.user %}
+                <li><a href="{{ path('app_login') }}">Login</a></li>
+                <li><a href="{{ path('app_register') }}">Register</a></li>
+            {% endif %}
+
+            {% if app.user %}
+
+                <li><a href="{{ path('wish_ajoutFormulaire') }}">Add Idea</a></li>
+
+                <li><a href="{{ path('app_logout') }}">Logout</a></li>
+            {% endif %}
+
+
+        </ul>
+    </nav>
+</header>
+
+<div class="container">
+        <section>
+        {% block body %}
+            {% for label, messages in app.flashes %}
+                {% for message in messages %}
+                    <div class="flash-{{ label }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        {% endblock %}
+    </section>
+</div>
+
+    <footer>
+        <div class="text-footer">
+
+            © {{ "now" | date("Y") }} Bucket-List
+        </div>
+    </footer>
+
+</body>
+</html>

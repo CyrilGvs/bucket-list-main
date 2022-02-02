@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+header{
+    width: 100%;
+}
+.profile{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.profile h2{
+    padding-left: 40px;
+    color : #F4C500;
+}
+/*----NAVBAR----*/
+nav {
+    font-family: 'Press start 2p', sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4%;
+    background-color: black;
+
+
+}
+
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+}
+nav ul li {
+    margin-left: 30px;
+    cursor: pointer;
+}
+
+nav ul a {
+    text-decoration: none;
+    color: white;
+    border-style: none;
+}
+
+nav ul :hover{
+    color: #F4C500;
+}
+
+body {
+    font-family: 'Press start 2p', sans-serif;
+    background-image: url(../img/super-mario-jeu_1440x900.jpg);
+    background-position: top;
+    color: white;
+    height: auto;
+    width: 100%;
+
+
+}
+
+footer {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    background-color: black;
+    height: 50px;
+}
+
+.text-footer{
+     text-align: center;
+     font-size: 18px;
+     color : white;
+     padding-top: 10px;
+
+ }

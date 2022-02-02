@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} | LISTE{% endblock %}
+
+{% block CSS %}
+    <meta charset="UTF-8">
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/listeCSS.css') }}">
+
+    <link rel="icon" href="{{ asset('../public/img/mario.png') }}">
+{% endblock %}
+
+{% block body %}
+    {% if wishes %}
+        <div class="liste">
+            <ul>
+                {% for wish in wishes %}
+                    <li>
+                        <a href="{{ path('wish_detail', {'id': wish.id}) }}">
+                            {{ wish.title }} -
+                            {{ wish.dateCreated | date("F j,Y ") }} - {{ wish.categories }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+{% endblock %}
+
+
+

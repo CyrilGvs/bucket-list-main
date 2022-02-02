@@ -1,0 +1,29 @@
+header{
+    color: white;
+}
+
+.liste ul{
+        list-style-type: none;
+    text-align: center;
+    margin-top: 150px;
+    background-color: rgba(255,255,255,0.7);
+    margin-left: 200px;
+    margin-right: 200px;
+
+
+
+}
+
+.liste ul li{
+    padding-top: 35px;
+    padding-bottom: 25px;
+}
+.liste ul li a {
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+        color: black;
+    text-decoration: none;
+
+}
+

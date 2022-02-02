@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} | HOME{% endblock %}
+
+{% block CSS %}
+    <meta charset="UTF-8">
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/indexCSS.css') }}">
+
+    <link rel="icon" href="{{ asset('../public/img/mario.png') }}">
+{% endblock %}
+
+
+{% block body %}
+    <div class="divBouton">
+        <button class="ajoutSouhait"><a href="{{ path('wish_ajoutFormulaire') }}">Ajouter un souhait</a></button>
+    </div>
+{% endblock %}
